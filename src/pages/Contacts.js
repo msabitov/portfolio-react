@@ -1,16 +1,11 @@
 import React, {useState} from 'react';
+import {ContactsContainer, ContactsWallpaper } from '../components/Contacts/ContactsElements';
 
 const Contacts = () => {
-    const [isOpen, setIsOpen] = useState(false);
-
-    const toggle = () => {
-        setIsOpen(!isOpen);
-    }
-
     return (
-        <div>
-           Contacts
-        </div>
+        <ContactsContainer>
+            <ContactsWallpaper />
+        </ContactsContainer>
     )
 }
 

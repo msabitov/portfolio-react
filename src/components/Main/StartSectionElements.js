@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 export const StartContainer = styled.div`
-    padding: 0;
     height: 100vh;
     display: grid;
     grid-template-rows: repeat(12, 1fr);

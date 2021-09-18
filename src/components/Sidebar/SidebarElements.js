@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import {FaTimes} from 'react-icons/fa';
-import {Link as LinkScroll} from 'react-scroll';
 import {Link as LinkRoute} from 'react-router-dom';
 
 export const SidebarContainer = styled.aside`
@@ -64,6 +63,4 @@ export const SidebarLink = styled(LinkRoute)`
     transition: 0.3s linear;
     color: white;
     cursor: pointer;
-
-
 `;

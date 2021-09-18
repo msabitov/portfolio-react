@@ -9,6 +9,7 @@ const Sidebar = (props) => {
             </Icon>
             <SidebarWrapper>
                 <SidebarMenu>
+                    <SidebarLink to='/' onClick={props.toggle}>На главную</SidebarLink>
                     <SidebarLink to='/about' onClick={props.toggle}>Обо мне</SidebarLink>
                     <SidebarLink to='/tech' onClick={props.toggle}>Технологии</SidebarLink>
                     <SidebarLink to='/contacts' onClick={props.toggle}>Контакты</SidebarLink>

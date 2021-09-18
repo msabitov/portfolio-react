@@ -1,16 +1,11 @@
 import React, {useState} from 'react';
+import {TechContainer, TechWallpaper } from '../components/Tech/TechElements';
 
 const Tech = () => {
-    const [isOpen, setIsOpen] = useState(false);
-
-    const toggle = () => {
-        setIsOpen(!isOpen);
-    }
-
     return (
-        <div>
-            Tech
-        </div>
+        <TechContainer>
+            <TechWallpaper />
+        </TechContainer>
     )
 }
 

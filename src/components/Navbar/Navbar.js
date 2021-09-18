@@ -1,12 +1,12 @@
 import React from 'react';
-import { NavLogo, NavbarContainer, Nav, MobileIcon, NavMenu, NavItem, NavLink } from './NavbarElements';
+import { NavLogo, NavbarContainer, Nav, MobileIcon, NavMenu, NavItem, NavLinkMy } from './NavbarElements';
 import { FaBars } from "react-icons/fa";
 
 const Navbar = (props) => {
     return (
         <Nav>
             <NavbarContainer>
-                <NavLogo>
+                <NavLogo exact to='/'>
                     MS
                 </NavLogo>
                 <MobileIcon onClick={props.toggle} >
@@ -14,13 +14,13 @@ const Navbar = (props) => {
                 </MobileIcon>
                 <NavMenu>
                     <NavItem>
-                        <NavLink to='about'>Личная информация</NavLink>
+                        <NavLinkMy to='about'>Обо мне</NavLinkMy>
                     </NavItem>
                     <NavItem>
-                        <NavLink to='tech'>Технологии</NavLink>
+                        <NavLinkMy to='tech'>Технологии</NavLinkMy>
                     </NavItem>
                     <NavItem>
-                        <NavLink to='contacts'>Контакты</NavLink>
+                        <NavLinkMy to='contacts'>Контакты</NavLinkMy>
                     </NavItem>
                 </NavMenu>
             </NavbarContainer>
