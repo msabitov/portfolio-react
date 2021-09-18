@@ -54,7 +54,7 @@ export const SidebarMenu = styled.ul`
     }
 `;
 
-export const SidebarLink = styled(LinkScroll)`
+export const SidebarLink = styled(LinkRoute)`
     display: flex;
     align-items: center;
     justify-content: center;

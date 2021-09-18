@@ -20,11 +20,22 @@ export const Heading = styled.h2`
     outline-offset: 20px;
     z-index: 50;
     font-size: 1.5rem;
-    background: rgba(1, 30, 41, 0.74);
+    background: rgba(1, 30, 41, 0);
     &:hover {
-        background: rgba(1, 30, 41, 0.2);
+        background: rgba(1, 30, 41, 1);
         outline-offset: 0;
         transition: 0.3s all ease-in-out;
+    }
+
+    @media screen and (max-width: 1020px){
+        font-size: 1.2rem;
+    }
+
+    @media screen and (max-width: 768px){
+        font-size: 1.5rem;
+    }
+    @media screen and (max-width: 500px){
+        font-size: 1rem;
     }
 
 `;
@@ -33,14 +44,8 @@ export const Heading = styled.h2`
 export const MainHeading = styled(Heading)`
     grid-column: 6 / span 4;
     grid-row: 3 / span 1;
-    
-
-    @media screen and (max-width: 1020px){
-        font-size: 1.2rem;
-    }
 
     @media screen and (max-width: 768px){
-        font-size: 1.5rem;
         grid-column: 2 / span 8;
         grid-row: 3 / span 1;
     }
@@ -49,13 +54,8 @@ export const MainHeading = styled(Heading)`
 export const JobHeading = styled(Heading)`
     grid-column: 2 / span 4;
     grid-row: 4 / span 1;
-    
-    @media screen and (max-width: 1020px){
-        font-size: 1.2rem;
-    }
 
     @media screen and (max-width: 768px){
-        font-size: 1.5rem;
         grid-column: 2 / span 8;
         grid-row: 5 / span 1;
     }
@@ -65,17 +65,11 @@ export const WorkHeading = styled(Heading)`
     grid-column: 6 / span 4;
     grid-row: 5 / span 1;
     
-    @media screen and (max-width: 1020px){
-        font-size: 1.2rem;
-    }
-
     @media screen and (max-width: 768px){
-        font-size: 1.5rem;
         grid-column: 2 / span 8;
         grid-row: 7 / span 1;
     }
 `;
-
 
 export const StartWall = styled.div`
     position: absolute;
