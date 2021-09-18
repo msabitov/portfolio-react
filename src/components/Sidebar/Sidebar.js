@@ -1,17 +1,17 @@
 import React from 'react'
 import { CloseIcon, Icon, SidebarContainer, SidebarLink, SidebarMenu, SidebarWrapper } from './SidebarElements'
 
-const Sidebar = () => {
+const Sidebar = (props) => {
     return (
-        <SidebarContainer>
-            <Icon>
+        <SidebarContainer isOpen={props.isOpen}>
+            <Icon onClick={props.toggle}>
                 <CloseIcon />
             </Icon>
             <SidebarWrapper>
                 <SidebarMenu>
-                    <SidebarLink to='about'>Обо мне</SidebarLink>
-                    <SidebarLink to='tech'>Технологии</SidebarLink>
-                    <SidebarLink to='contacts'>Контакты</SidebarLink>
+                    <SidebarLink to='about' onClick={props.toggle}>Обо мне</SidebarLink>
+                    <SidebarLink to='tech' onClick={props.toggle}>Технологии</SidebarLink>
+                    <SidebarLink to='contacts' onClick={props.toggle}>Контакты</SidebarLink>
                 </SidebarMenu>
             </SidebarWrapper>
             

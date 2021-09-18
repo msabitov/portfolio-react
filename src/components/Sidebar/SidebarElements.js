@@ -22,24 +22,33 @@ export const CloseIcon = styled(FaTimes)`
 `;
 
 export const Icon = styled.div`
-    position: absolute;
-    top: 1.5rem;
-    right: 1.5rem;
-    background: transparent;
-    font-size: 2rem;
-    cursor: pointer;
+    display: none;
+    @media screen and (max-width: 768px){
+        color: white;   
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(-120%, 40%);
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
 `;
 
 export const SidebarWrapper = styled.div`
     color: white;
+    width: 100%;
+    height: 80vh;
 `;
 
 export const SidebarMenu = styled.ul`
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, 1fr);
+    grid-row-gap: 30px;
     text-align: center;
-
+    padding: 60px 0;
+    
     @media screen and (max:width: 480px){
         grid-template-rows: repeat(3, 40px);
     }

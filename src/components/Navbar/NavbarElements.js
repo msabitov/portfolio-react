@@ -6,7 +6,6 @@ import { Link as LinkScroll } from 'react-scroll';
 export const Nav = styled.nav`
     background: #000;
     height: 72px;
-    
     width: 100%;
     display: flex;
     justify-content: center;
@@ -14,6 +13,7 @@ export const Nav = styled.nav`
     font-size: 1rem;
     position: fixed;
     top: 0;
+    right: 0;
     z-index: 10;
 `
 
@@ -23,7 +23,7 @@ export const NavbarContainer = styled.div`
     align-items: center;
     width: 100%;
     padding: 0 20px;
-    max-width:  1080px;
+    max-width:  1920px;
     height: 72px;
     z-index: 1;
 `;
@@ -35,21 +35,22 @@ export const NavLogo = styled(LinkRoute)`
     font-size: 1.5rem;
     display: flex;
     align-items: center;
-    margin-left: 20px;
-    font-weight: bold;
+    font-weight: 500;
     text-decoration: none;
+    @media screen and (max-width: 768px){ 
+        display: none;
+    }
 `;
 
 export const MobileIcon = styled.div`
     display: none;
-    
     @media screen and (max-width: 768px){
         color: white;   
         display: block;
         position: absolute;
         top: 0;
         right: 0;
-        transform: translate(-100%, 60%);
+        transform: translate(-120%, 40%);
         font-size: 1.5rem;
         cursor: pointer;
     }
@@ -57,10 +58,12 @@ export const MobileIcon = styled.div`
 
 export const NavMenu = styled.ul`
     display: flex;
+    justify-content: center;
     align-items: center;
     list-style: none;
     text-align: center;
-    margin-right: 20px;
+    margin: 0 40px;
+    padding: 0;
     @media screen and (max-width: 768px){
         display: none;
     }

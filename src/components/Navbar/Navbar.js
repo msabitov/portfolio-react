@@ -7,7 +7,7 @@ const Navbar = (props) => {
         <Nav>
             <NavbarContainer>
                 <NavLogo>
-                    
+                    MS
                 </NavLogo>
                 <MobileIcon onClick={props.toggle} >
                     <FaBars />
