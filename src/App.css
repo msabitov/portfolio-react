@@ -34,3 +34,25 @@
   font-size: 24px;
 }
 
+.page{
+  position: absolute;
+}
+
+.page-enter-active {
+  animation: fade-in 1.5s forwards;
+}
+
+.page-exit-active {
+  animation: fade-out 1.5s forwards;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateX(-400px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

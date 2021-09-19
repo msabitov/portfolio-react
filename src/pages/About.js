@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {AboutContainer, AboutItem, DepImgCont, ItemIcon, Wallpaper, Resume, AboutHeading } from '../components/About/AboutContainer';
+import {AboutContainer, AboutItem, DepImgCont, ItemIcon, Wallpaper, Resume, AboutHeading } from '../components/About/AboutElements';
 import {FaBirthdayCake, FaBookOpen, FaBook, FaFlag, FaUniversity, FaUserTie, FaRocket } from 'react-icons/fa';
 import DepImage0 from '../images/svg/DepImage-0.svg';
 import DepImage1 from '../images/svg/DepImage-1.svg';
@@ -24,7 +24,7 @@ const About = () => {
     ];
     
     const itemList = itemInfo.map((item, ind) => (
-        <AboutItem onClick={numItem => (numItem != (ind+1)) ? setNumItem(ind+1) : setNumItem(0)} active={numItem == (ind+1) ? 'white' : 'none'} column={item.column} row={item.row}>
+        <AboutItem onClick={numItem => (numItem == (ind+1)) ? setNumItem(0) : setNumItem(ind+1)} active={numItem == (ind+1)} column={item.column} row={item.row}>
             <ItemIcon>
                 {item.jsx}
             </ItemIcon>
@@ -37,7 +37,7 @@ const About = () => {
     return (
         <AboutContainer>
             <Wallpaper onClick={numItem => setNumItem(0)}/>
-            <AboutHeading>Меня зовут Марат Сабитов. Я начинающий Frontend-разработчик.</AboutHeading>
+            <AboutHeading>Меня зовут Марат Сабитов. Я&nbsp;начинающий Frontend-разработчик.</AboutHeading>
             {itemList}
             <DepImgCont url={imgArray[numItem]} />
             <Resume url={ResImg} />

@@ -14,7 +14,7 @@ export const ContactsContainer = styled.div`
 
 
 export const ContactsWallpaper = styled.div`
-    background: fixed url(${image}) right top;
+    background: fixed url(${image}) left top;
     background-repeat: no-repeat;
     position: absolute;
     background-size: cover;
@@ -22,4 +22,37 @@ export const ContactsWallpaper = styled.div`
     right: 0;
     width: 100%;
     height: 100%;
-`; 
+`;
+
+export const ContactsItem = styled.a`
+    font-weight: 500;
+    grid-column: ${props => props.column};
+    grid-row: ${props => props.row};
+    color: black;
+    font-size: 1.2rem;
+    z-index: 50;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    position: relative;
+    cursor: pointer;
+    text-decoration: none;
+
+    &:hover, &:active, &:focus {
+        box-shadow: 5px 5px 10px grey;
+    } 
+
+    @media screen and (max-width: 1305px){
+        font-size: 0.8rem;
+    }
+    @media screen and (max-width: 950px){
+        font-size: 0.7rem;
+        
+    }
+    @media screen and (max-width: 768px){
+        font-size: 0.5rem;
+        padding: 0 0.5rem;
+        grid-column: 2 / span 8;
+    }
+`;

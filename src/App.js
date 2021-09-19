@@ -1,6 +1,7 @@
 import './App.css';
 import React, { useState } from 'react';
 import {BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import {CSSTransition} from 'react-transition-group';
 import Home from './pages/Home';
 import Tech from './pages/Tech';
 import Contacts from './pages/Contacts';
@@ -13,6 +14,12 @@ function App() {
   const toggle = () => {
       setIsOpen(!isOpen);
   }
+  const routes = [
+    {path:"/", Component: Home},
+    {path:"/about", Component: About},
+    {path:"/tech", Component: Tech},
+    {path:"/contacts", Component: Contacts}
+  ];
   return (
     <Router>
       <Sidebar isOpen={isOpen} toggle={toggle} />
