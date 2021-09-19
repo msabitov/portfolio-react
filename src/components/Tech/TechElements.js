@@ -26,7 +26,7 @@ export const TechWallpaper = styled.div`
 
 export const TechHeading = styled.h1`
     font-weight: 700;
-    grid-column: 4 / span 5;
+    grid-column: 3 / span 6;
     grid-row: 2 / span 2;
     color: black;
     font-size: 1.5rem;
@@ -47,6 +47,7 @@ export const TechHeading = styled.h1`
 
     @media screen and (max-width: 468px){
         grid-column: 1 / span 10;
+        font-size: 0.8rem;
     }
 `;
 
@@ -60,7 +61,7 @@ export const TechItem = styled.h2`
     font-size: 1.2rem;
     z-index: 50;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     padding: 0.5rem 1rem;
     position: relative;
@@ -84,4 +85,42 @@ export const TechItem = styled.h2`
         grid-column: 2 / span 8;
     }
             
+`;
+
+export const ProgressBar = styled.div`
+    grid-column: ${props => props.column};
+    grid-row: ${props => props.row};
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 50;
+`;
+
+export const BarBottom = styled.div`
+    width: 50%;
+    height: 95%;
+    border: 2px solid black;
+    border-radius: 0 0 50px 50px; 
+    background-color: grey;
+    opacity: 0.2;
+    position: relative;
+`;
+
+export const BarTop = styled.div`
+    width: 60%;
+    height: 5%;
+    border: 2px solid black;
+    border-radius: 10px; 
+    background-color: grey;
+    opacity: 0.2;
+`;
+
+export const BarFluid = styled.div`
+    position: absolute;
+    bottom: 0;
+    background-color: #5FE2DC;
+    width: 100%;
+    height: 85%;
+    border-radius: 0 0 50px 50px; 
 `;

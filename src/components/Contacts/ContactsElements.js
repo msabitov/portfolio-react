@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import image from '../../images/frame-4.png';
+import {Route} from 'react-router-dom';
 
 export const ContactsContainer = styled.div`
     padding: 0;
@@ -43,15 +44,8 @@ export const ContactsItem = styled.a`
         box-shadow: 5px 5px 10px grey;
     } 
 
-    @media screen and (max-width: 1305px){
-        font-size: 0.8rem;
-    }
-    @media screen and (max-width: 950px){
-        font-size: 0.7rem;
-        
-    }
     @media screen and (max-width: 768px){
-        font-size: 0.5rem;
+        font-size: 1rem;
         padding: 0 0.5rem;
         grid-column: 2 / span 8;
     }
