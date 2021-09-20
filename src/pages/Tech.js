@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-import {BarBottom, BarFluid, BarTop, ProgressBar, TechContainer, TechHeading, TechItem, TechListCont, TechWallpaper } from '../components/Tech/TechElements';
+import {BarBottom, BarFluid, BarTop, ProgressBar, TechContainer, TechHeading, TechItem, TechListCont, TechWallpaper, WowIcon } from '../components/Tech/TechElements';
+import WowSvg from '../images/svg/Wow.svg';
 
 const Tech = () => {
     const [matrix, setMatrix] = useState([false, false, false, false, false, false, false, 
@@ -48,6 +49,7 @@ const Tech = () => {
             <TechListCont>
                 {TechList}
             </TechListCont>
+            <WowIcon url={WowSvg} active={BarLevel == 14} />
             <ProgressBar row={"4 /span 7"} column={"9 / span 2"}>
                 <BarTop />
                 <BarBottom>

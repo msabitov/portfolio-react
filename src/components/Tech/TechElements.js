@@ -137,3 +137,17 @@ export const BarFluid = styled.div`
     height: ${props => props.level}%;
     border-radius: 0 0 50px 50px;
 `;
+
+export const WowIcon = styled.a`
+    display: ${props => props.active ? "block" : "none"};
+    grid-column: 9 / span 2;
+    grid-row: 2 / span 2;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    background-image: url(${({url}) => url});
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    overflow: hidden;
+`;

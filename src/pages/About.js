@@ -24,7 +24,7 @@ const About = () => {
     ];
     
     const itemList = itemInfo.map((item, ind) => (
-        <AboutItem onClick={numItem => (numItem == (ind+1)) ? setNumItem(0) : setNumItem(ind+1)} active={numItem == (ind+1)} column={item.column} row={item.row}>
+        <AboutItem onMouseOut={() => setNumItem(0)} onMouseEnter={() => setNumItem(ind+1)} active={numItem == (ind+1)} column={item.column} row={item.row}>
             <ItemIcon>
                 {item.jsx}
             </ItemIcon>
