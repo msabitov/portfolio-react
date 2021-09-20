@@ -1,29 +1,57 @@
 import React, {useState} from 'react';
-import {BarBottom, BarFluid, BarTop, ProgressBar, TechContainer, TechHeading, TechItem, TechWallpaper } from '../components/Tech/TechElements';
+import {BarBottom, BarFluid, BarTop, ProgressBar, TechContainer, TechHeading, TechItem, TechListCont, TechWallpaper } from '../components/Tech/TechElements';
 
 const Tech = () => {
+    const [matrix, setMatrix] = useState([false, false, false, false, false, false, false, 
+        false, false, false, false, false, false, false]);
+    const BarLevel = matrix.filter(Boolean).length;
+
+    const toggle = (index) => {
+        const matrixNew = matrix.slice();
+        matrixNew.splice(index,1,!(matrixNew[index]));
+        setMatrix(matrixNew);
+    };
+    
+    const layout = [
+        {row:"1 /span 1", column:"1 / span 1", text:"HTML5"},
+        {row:"2 /span 1", column:"1 / span 1", text:"CSS3"},
+        {row:"3 /span 1", column:"1 / span 1", text:"JavaScript"},
+        {row:"4 /span 1", column:"1 / span 1", text:"Node.js"},
+        {row:"5 /span 1", column:"1 / span 1", text:"React"},
+        {row:"6 /span 1", column:"1 / span 1", text:"Styled Components"},
+        {row:"7 /span 1", column:"1 / span 1", text:"React Router"},
+        {row:"1 /span 1", column:"2 / span 1", text:"Python"},
+        {row:"2 /span 1", column:"2 / span 1", text:"SQL"},
+        {row:"3 /span 1", column:"2 / span 1", text:"Microsoft Office"},
+        {row:"4 /span 1", column:"2 / span 1", text:"English (Intermediate)"},
+        {row:"5 /span 1", column:"2 / span 1", text:"Git"},
+        {row:"6 /span 1", column:"2 / span 1", text:"Figma"},
+        {row:"7 /span 1", column:"2 / span 1", text:"MATLAB"}
+    ];
+
+    const TechList = layout.map(
+        (item, index) => (
+        <TechItem 
+            onClick={() => toggle(index)} 
+            active={matrix[index]} 
+            row={item.row} 
+            column={item.column}
+            key={"item"+index}
+            >
+            {item.text}
+        </TechItem>)
+    );
     return (
         <TechContainer>
             <TechWallpaper />
-            <TechHeading>Какие технологии Вас интересуют?</TechHeading>
-            <TechItem row={"4 /span 1"} column={"3 / span 3"} />
-            <TechItem row={"5 /span 1"} column={"3 / span 3"} />
-            <TechItem row={"6 /span 1"} column={"3 / span 3"} />
-            <TechItem row={"7 /span 1"} column={"3 / span 3"} />
-            <TechItem row={"8 /span 1"} column={"3 / span 3"} />
-            <TechItem row={"9 /span 1"} column={"3 / span 3"} />
-            <TechItem row={"10 /span 1"} column={"3 / span 3"} />
-            <TechItem row={"4 /span 1"} column={"6 / span 3"} />
-            <TechItem row={"5 /span 1"} column={"6 / span 3"} />
-            <TechItem row={"6 /span 1"} column={"6 / span 3"} />
-            <TechItem row={"7 /span 1"} column={"6 / span 3"} />
-            <TechItem row={"8 /span 1"} column={"6 / span 3"} />
-            <TechItem row={"9 /span 1"} column={"6 / span 3"} />
-            <TechItem row={"10 /span 1"} column={"6 / span 3"} />
+            <TechHeading>Какие знания Вас интересуют?</TechHeading>
+            <TechListCont>
+                {TechList}
+            </TechListCont>
             <ProgressBar row={"4 /span 7"} column={"9 / span 2"}>
                 <BarTop />
                 <BarBottom>
-                    <BarFluid />
+                    <BarFluid level={BarLevel*7.15}/>
                 </BarBottom>
             </ProgressBar>
         </TechContainer>

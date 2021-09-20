@@ -50,7 +50,22 @@ export const TechHeading = styled.h1`
         font-size: 0.8rem;
     }
 `;
+export const TechListCont = styled.div`
+    grid-column: 3 / span 6;
+    grid-row: 4 / span 7;
+    display: grid;
+    grid-template-rows: repeat(7, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    position: relative;
 
+    @media screen and (max-width: 768px){
+        grid-column: 1 / span 8;
+        grid-row: 4 / span 7;
+        padding-left: 1rem;
+    }
+`;
 export const TechItem = styled.h2`
     font-weight: 500;
     grid-column: ${props => props.column};
@@ -66,7 +81,7 @@ export const TechItem = styled.h2`
     padding: 0.5rem 1rem;
     position: relative;
     cursor: default;
-    background-color: ${props => props.active ? "white" : "grey"};
+    background-color: ${props => props.active ? "#5FE2DC" : "white"};
 
     &:hover, &:active, &:focus {
         box-shadow: 5px 5px 10px grey;
@@ -77,12 +92,10 @@ export const TechItem = styled.h2`
     }
     @media screen and (max-width: 950px){
         font-size: 0.7rem;
-        
     }
     @media screen and (max-width: 768px){
         font-size: 0.5rem;
         padding: 0 0.5rem;
-        grid-column: 2 / span 8;
     }
             
 `;
@@ -102,8 +115,8 @@ export const BarBottom = styled.div`
     height: 95%;
     border: 2px solid black;
     border-radius: 0 0 50px 50px; 
-    background-color: grey;
-    opacity: 0.2;
+    background-color: white;
+    opacity: 0.6;
     position: relative;
 `;
 
@@ -112,8 +125,8 @@ export const BarTop = styled.div`
     height: 5%;
     border: 2px solid black;
     border-radius: 10px; 
-    background-color: grey;
-    opacity: 0.2;
+    background-color: white;
+    opacity: 0.6;
 `;
 
 export const BarFluid = styled.div`
@@ -121,6 +134,6 @@ export const BarFluid = styled.div`
     bottom: 0;
     background-color: #5FE2DC;
     width: 100%;
-    height: 85%;
-    border-radius: 0 0 50px 50px; 
+    height: ${props => props.level}%;
+    border-radius: 0 0 50px 50px;
 `;

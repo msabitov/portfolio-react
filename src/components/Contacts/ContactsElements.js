@@ -39,6 +39,7 @@ export const ContactsItem = styled.a`
     position: relative;
     cursor: pointer;
     text-decoration: none;
+    border-radius: 30px;
 
     &:hover, &:active, &:focus {
         box-shadow: 5px 5px 10px grey;
