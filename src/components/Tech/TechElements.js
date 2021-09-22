@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { TransitionGroup } from 'react-transition-group';
 import image from '../../images/frame-3.png';
 
 export const TechContainer = styled.div`
@@ -81,7 +82,6 @@ export const TechItem = styled.h2`
     padding: 0.5rem 1rem;
     position: relative;
     cursor: default;
-    background-color: ${props => props.active ? "#5FE2DC" : "white"};
 
     &:hover, &:active, &:focus {
         box-shadow: 5px 5px 10px grey;

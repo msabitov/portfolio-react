@@ -1,4 +1,6 @@
 import React, {useState} from 'react';
+import '../App.css';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import {BarBottom, BarFluid, BarTop, ProgressBar, TechContainer, TechHeading, TechItem, TechListCont, TechWallpaper, WowIcon } from '../components/Tech/TechElements';
 import WowSvg from '../images/svg/Wow.svg';
 
@@ -30,18 +32,27 @@ const Tech = () => {
         {row:"7 /span 1", column:"2 / span 1", text:"MATLAB"}
     ];
 
-    const TechList = layout.map(
-        (item, index) => (
-        <TechItem 
-            onClick={() => toggle(index)} 
-            active={matrix[index]} 
-            row={item.row} 
-            column={item.column}
-            key={"item"+index}
-            >
-            {item.text}
-        </TechItem>)
-    );
+    const TechList = <TransitionGroup appear>{layout.map(
+        (item, index) => {
+            <CSSTransition 
+                in={matrix[index]}
+                appear={true}
+                timeout={2000} 
+                classNames="tech-item"
+                key={index}
+                >
+                <TechItem 
+                    onClick={() => toggle(index)} 
+                    active={matrix[index]} 
+                    row={item.row} 
+                    column={item.column}
+                    key={"item"+index}
+                    >
+                    {item.text}
+                </TechItem>}
+            </CSSTransition>
+        })}
+        </TransitionGroup>
     return (
         <TechContainer>
             <TechWallpaper />

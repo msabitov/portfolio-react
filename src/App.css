@@ -34,25 +34,81 @@
   font-size: 24px;
 }
 
-.page{
-  position: absolute;
+body {
+  /*overflow: hidden;*/
+}
+
+.tech-item-appear {
+  background-color: white;
+}
+
+.tech-item-appear-active {
+  background-color: white;
+  transition: all 200ms;
+}
+
+.tech-item-enter {
+  background-color: #5FE2DC;
+}
+
+.tech-item-enter-active {
+  background-color: #5FE2DC;
+  transition: all 200ms;
+}
+
+.tech-item-exit {
+  background-color: white;
+}
+
+.tech-item-exit-active {
+  background-color: white;
+  transition: all 200ms;
+}
+
+.page-enter {
+  opacity: 0.5;
 }
 
 .page-enter-active {
-  animation: fade-in 1.5s forwards;
+  opacity: 1;
+  transition: opacity 2000ms ease-in;
+}
+
+.page-exit {
+  opacity: 0.5;
 }
 
 .page-exit-active {
-  animation: fade-out 1.5s forwards;
+  opacity: 1;
+  transition: opacity 2000ms forwards;
+}
+
+.slide-enter-active {
+  transition: fade-in 500ms forwards;
+}
+
+.slide-exit-active {
+  transition: fade-out 500ms forwards;
 }
 
 @keyframes fade-in {
   0% {
     opacity: 0;
-    transform: translateX(-400px);
+    transform: translateX(100%);
   }
   100% {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-100%);
   }
 }
