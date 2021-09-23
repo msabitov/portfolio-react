@@ -83,6 +83,27 @@ export const TechItem = styled.h2`
     position: relative;
     cursor: default;
 
+    &.${props => props.transitionName}-enter {
+        opacity: 0.5;
+        background-color: white;
+        background-color: transparent;
+    }
+    .${props => props.transitionName}-enter-active {
+        opacity: 1;
+        background-color: white;
+        transition: all 500ms ease-in-out;
+    }
+
+    &.${props => props.transitionName}-exit {
+        opacity: 0.5;
+        background-color: transparent;
+    }
+    &.${props => props.transitionName}-exit-active {
+        opacity: 1;
+        background-color: transparent;
+        transition: all 500ms ease-in-out;
+    }
+
     &:hover, &:active, &:focus {
         box-shadow: 5px 5px 10px grey;
     } 
@@ -118,6 +139,7 @@ export const BarBottom = styled.div`
     background-color: white;
     opacity: 0.6;
     position: relative;
+    overflow: hidden;
 `;
 
 export const BarTop = styled.div`
@@ -135,7 +157,7 @@ export const BarFluid = styled.div`
     background-color: #5FE2DC;
     width: 100%;
     height: ${props => props.level}%;
-    border-radius: 0 0 50px 50px;
+    transition: height 400ms ease-in-out 100ms;
 `;
 
 export const WowIcon = styled.a`

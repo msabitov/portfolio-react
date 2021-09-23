@@ -34,35 +34,32 @@
   font-size: 24px;
 }
 
-body {
-  /*overflow: hidden;*/
-}
-
-.tech-item-appear {
-  background-color: white;
-}
-
-.tech-item-appear-active {
-  background-color: white;
-  transition: all 200ms;
-}
 
 .tech-item-enter {
-  background-color: #5FE2DC;
+  opacity: 0;
 }
-
 .tech-item-enter-active {
-  background-color: #5FE2DC;
-  transition: all 200ms;
+  opacity: 0.5;
+  background-color: white;
+}
+.tech-item-enter-done {
+  opacity: 1;
+  background-color: white;
+  transition: all 300ms linear;
 }
 
 .tech-item-exit {
-  background-color: white;
+  opacity: 0;
+  background-color: transparent;
 }
-
 .tech-item-exit-active {
-  background-color: white;
-  transition: all 200ms;
+  opacity: 0.5;
+  background-color: transparent;
+}
+.tech-item-exit-done {
+  opacity: 1;
+  background-color: transparent;
+  transition: all 300ms ease-in-out;
 }
 
 .page-enter {

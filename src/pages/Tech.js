@@ -32,27 +32,25 @@ const Tech = () => {
         {row:"7 /span 1", column:"2 / span 1", text:"MATLAB"}
     ];
 
-    const TechList = <TransitionGroup appear>{layout.map(
-        (item, index) => {
-            <CSSTransition 
-                in={matrix[index]}
-                appear={true}
-                timeout={2000} 
-                classNames="tech-item"
-                key={index}
+    const TechList = layout.map((item, index) => (
+            <CSSTransition
+            in={matrix[index]}
+            key={index}
+            classNames="tech-item"
+            timeout={500}
+            >
+            <TechItem 
+                onClick={() => toggle(index)} 
+                active={matrix[index]} 
+                row={item.row} 
+                column={item.column}
+                transitionName="tech-item"
+                key={"item"+index}
                 >
-                <TechItem 
-                    onClick={() => toggle(index)} 
-                    active={matrix[index]} 
-                    row={item.row} 
-                    column={item.column}
-                    key={"item"+index}
-                    >
-                    {item.text}
-                </TechItem>}
+                {item.text}
+            </TechItem>
             </CSSTransition>
-        })}
-        </TransitionGroup>
+        ))
     return (
         <TechContainer>
             <TechWallpaper />
