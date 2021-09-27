@@ -39,13 +39,21 @@ function App() {
     <Router>
       <Sidebar isOpen={isOpen} toggle={toggle} />
       <Navbar toggle={toggle} />
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/about" component={About} />
-        <Route exact path="/tech" component={Tech} />
-        <Route exact path="/contacts" component={Contacts} />
-        <Route component={NoMatch}></Route>
-      </Switch>
+      <Route exact path="/">
+        <Home />
+      </Route>
+      <Route exact path="/about">
+        <About />
+      </Route>
+      <Route exact path="/tech">
+        <Tech />
+      </Route>
+      <Route exact path="/contacts">
+        <Contacts />
+      </Route>
+      <Route>
+        <NoMatch />
+      </Route>
     </Router>
   );
 }

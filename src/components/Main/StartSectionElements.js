@@ -1,5 +1,5 @@
-import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const StartContainer = styled.div`
     height: 100vh;
@@ -10,7 +10,7 @@ export const StartContainer = styled.div`
     grid-row-gap: 20px;
 `;
 
-export const Heading = styled.h2`
+export const Heading = styled(Link)`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,10 +20,12 @@ export const Heading = styled.h2`
     z-index: 50;
     font-size: 1.5rem;
     background: rgba(1, 30, 41, 0);
+    text-decoration: none;
+
+    transition: 0.3s all ease-in-out;
     &:hover {
         background: rgba(1, 30, 41, 1);
         outline-offset: 0;
-        transition: 0.3s all ease-in-out;
     }
 
     @media screen and (max-width: 1020px){
@@ -34,7 +36,7 @@ export const Heading = styled.h2`
         font-size: 1.5rem;
     }
     @media screen and (max-width: 500px){
-        font-size: 1rem;
+        font-size: 0.8rem;
     }
 
 `;

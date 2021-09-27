@@ -37,7 +37,7 @@ const Tech = () => {
             in={matrix[index]}
             key={index}
             classNames="tech-item"
-            timeout={500}
+            timeout={200}
             >
             <TechItem 
                 onClick={() => toggle(index)} 

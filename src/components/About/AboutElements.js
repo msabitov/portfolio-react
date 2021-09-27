@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, {keyframes} from 'styled-components';
 import image from '../../images/frame-2.png';
 
 export const AboutContainer = styled.div`
@@ -10,6 +10,7 @@ export const AboutContainer = styled.div`
     grid-column-gap: 20px;
     grid-row-gap: 20px;
     position: relative;
+    overflow: hidden;
 `;
 
 
@@ -38,8 +39,9 @@ export const AboutItem = styled.h2`
     position: relative;
     cursor: default;
     background-color: ${props => props.active ? "white" : "transparent"};
+    transition: all 500ms ease-in-out;
 
-    &:hover, &:active, &:focus {
+    &:hover {
         box-shadow: 5px 5px 10px grey;
     } 
 
@@ -66,6 +68,25 @@ export const ItemIcon = styled.div`
 
     @media screen and (max-width: 768px){
         margin-right: 10px;
+    }
+`;
+
+export const imgFrames = keyframes`
+    0% {
+        opacity: 1;
+        transform: rotate(0deg);
+    }
+    25% {
+        opacity: 0;
+        transform: rotate(90deg);
+    }
+    75% {
+        opacity: 0;
+        transform: rotate(270deg);
+    }
+    100% {
+        opacity: 1;
+        transform: rotate(360deg);
     }
 `;
 

@@ -40,10 +40,11 @@ export const ContactsItem = styled.a`
     cursor: pointer;
     text-decoration: none;
     border-radius: 30px;
+    transition: all 500ms ease-in-out;
 
-    &:hover, &:active, &:focus {
+    &:hover {
         box-shadow: 5px 5px 10px grey;
-    } 
+    }
 
     @media screen and (max-width: 768px){
         font-size: 1rem;

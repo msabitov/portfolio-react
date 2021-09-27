@@ -82,31 +82,12 @@ export const TechItem = styled.h2`
     padding: 0.5rem 1rem;
     position: relative;
     cursor: default;
+    background-color: ${props => props.active ? "white" : "transparent"};
+    transition: all 500ms ease-in-out;
 
-    &.${props => props.transitionName}-enter {
-        opacity: 0.5;
-        background-color: white;
-        background-color: transparent;
-    }
-    .${props => props.transitionName}-enter-active {
-        opacity: 1;
-        background-color: white;
-        transition: all 500ms ease-in-out;
-    }
-
-    &.${props => props.transitionName}-exit {
-        opacity: 0.5;
-        background-color: transparent;
-    }
-    &.${props => props.transitionName}-exit-active {
-        opacity: 1;
-        background-color: transparent;
-        transition: all 500ms ease-in-out;
-    }
-
-    &:hover, &:active, &:focus {
+    &:hover {
         box-shadow: 5px 5px 10px grey;
-    } 
+    }
 
     @media screen and (max-width: 1305px){
         font-size: 0.8rem;
