@@ -2,6 +2,8 @@ import React from 'react';
 import {FaVk, FaTelegram, FaMailBulk, FaGithub} from 'react-icons/fa';
 import {ItemIcon} from '../components/About/AboutElements';
 import {ContactsContainer, ContactsItem, ContactsWallpaper } from '../components/Contacts/ContactsElements';
+import { motion } from 'framer-motion';
+import { pageVariants } from '../components/AnimationVariants';
 
 const Contacts = () => {
     const contactsInfo = [
@@ -19,10 +21,12 @@ const Contacts = () => {
         </ContactsItem>
     );
     return (
-        <ContactsContainer>
-            <ContactsWallpaper />
-            {contacts}
-        </ContactsContainer>
+        <motion.div variants={pageVariants} initial="hidden" animate="visible" exit="exit">
+            <ContactsContainer>
+                <ContactsWallpaper />
+                {contacts}
+            </ContactsContainer>
+        </motion.div>
     )
 }
 

@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { PageContainer } from '../components/CommonElements';
 import {CSSTransition, SwitchTransition, TransitionGroup} from 'react-transition-group';
 import {AboutContainer, AboutItem, DepImgCont, ItemIcon, Wallpaper, Resume, AboutHeading } from '../components/About/AboutElements';
 import {FaBirthdayCake, FaBookOpen, FaBook, FaFlag, FaUniversity, FaUserTie, FaRocket } from 'react-icons/fa';
@@ -12,6 +13,8 @@ import DepImage6 from '../images/svg/DepImage-6.svg';
 import DepImage7 from '../images/svg/DepImage-7.svg';
 import ResImg from '../images/svg/Resume.svg';
 import '../App.css';
+import { motion } from 'framer-motion';
+import { pageVariants } from '../components/AnimationVariants';
 
 const About = () => {
     const [numItem, setNumItem] = useState(0);
@@ -52,13 +55,15 @@ const About = () => {
     ));
     
     return (
-        <AboutContainer>
-            <Wallpaper onClick={() => setNumItem(0)}/>
-            <AboutHeading>Меня зовут Марат Сабитов. Я&nbsp;начинающий Frontend-разработчик.</AboutHeading>
-            {itemList}
-            {imgList}
-            <Resume url={ResImg} />
-        </AboutContainer>
+        <motion.div variants={pageVariants} initial="hidden" animate="visible" exit="exit">
+            <AboutContainer key="1" color="blue">
+                <Wallpaper onClick={() => setNumItem(0)}/>
+                <AboutHeading>Меня зовут Марат Сабитов. Я&nbsp;начинающий Frontend-разработчик.</AboutHeading>
+                {itemList}
+                {imgList}
+                <Resume url={ResImg} />
+            </AboutContainer>
+        </motion.div>
     )
 }
 

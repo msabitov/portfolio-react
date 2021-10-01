@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { PageContainer } from '../CommonElements';
 
 export const StartContainer = styled.div`
     height: 100vh;
@@ -8,6 +9,7 @@ export const StartContainer = styled.div`
     grid-template-columns: repeat(10, 1fr);
     grid-column-gap: 20px;
     grid-row-gap: 20px;
+    position: relative;
 `;
 
 export const Heading = styled(Link)`

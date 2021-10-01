@@ -3,6 +3,8 @@ import '../App.css';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import {BarBottom, BarFluid, BarTop, ProgressBar, TechContainer, TechHeading, TechItem, TechListCont, TechWallpaper, WowIcon } from '../components/Tech/TechElements';
 import WowSvg from '../images/svg/Wow.svg';
+import { motion } from 'framer-motion';
+import { pageVariants } from '../components/AnimationVariants';
 
 const Tech = () => {
     const [matrix, setMatrix] = useState([false, false, false, false, false, false, false, 
@@ -52,20 +54,22 @@ const Tech = () => {
             </CSSTransition>
         ))
     return (
-        <TechContainer>
-            <TechWallpaper />
-            <TechHeading>Какие знания Вас интересуют?</TechHeading>
-            <TechListCont>
-                {TechList}
-            </TechListCont>
-            <WowIcon url={WowSvg} active={BarLevel == 14} />
-            <ProgressBar row={"4 /span 7"} column={"9 / span 2"}>
-                <BarTop />
-                <BarBottom>
-                    <BarFluid level={BarLevel*7.15}/>
-                </BarBottom>
-            </ProgressBar>
-        </TechContainer>
+        <motion.div variants={pageVariants} initial="hidden" animate="visible" exit="exit">
+            <TechContainer key="3">
+                <TechWallpaper />
+                <TechHeading>Какие знания Вас интересуют?</TechHeading>
+                <TechListCont>
+                    {TechList}
+                </TechListCont>
+                <WowIcon url={WowSvg} active={BarLevel == 14} />
+                <ProgressBar row={"4 /span 7"} column={"9 / span 2"}>
+                    <BarTop />
+                    <BarBottom>
+                        <BarFluid level={BarLevel*7.15}/>
+                    </BarBottom>
+                </ProgressBar>
+            </TechContainer>
+        </motion.div>
     )
 }
 
