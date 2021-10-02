@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Link as LinkRoute, NavLink} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export const Nav = styled.nav`
     background: #000;

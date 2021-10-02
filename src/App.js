@@ -1,6 +1,6 @@
 import './App.css';
 import React, { useState } from 'react';
-import {BrowserRouter as Router, Route, Switch, useLocation } from 'react-router-dom';
+import {Route, Switch, useLocation } from 'react-router-dom';
 import Home from './pages/Home';
 import Tech from './pages/Tech';
 import Contacts from './pages/Contacts';
@@ -16,13 +16,6 @@ function App() {
   const toggle = () => {
       setIsOpen(!isOpen);
   }
-  const routes = [
-    {path:"/", Component: Home},
-    {path:"/about", Component: About},
-    {path:"/tech", Component: Tech},
-    {path:"/contacts", Component: Contacts},
-    {path:"", Component: NoMatch}
-  ];
 
   return (
     <div>

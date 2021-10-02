@@ -1,6 +1,4 @@
 import React, {useState} from 'react';
-import { PageContainer } from '../components/CommonElements';
-import {CSSTransition, SwitchTransition, TransitionGroup} from 'react-transition-group';
 import {AboutContainer, AboutItem, DepImgCont, ItemIcon, Wallpaper, Resume, AboutHeading } from '../components/About/AboutElements';
 import {FaBirthdayCake, FaBookOpen, FaBook, FaFlag, FaUniversity, FaUserTie, FaRocket } from 'react-icons/fa';
 import DepImage0 from '../images/svg/DepImage-0.svg';
@@ -13,8 +11,8 @@ import DepImage6 from '../images/svg/DepImage-6.svg';
 import DepImage7 from '../images/svg/DepImage-7.svg';
 import ResImg from '../images/svg/Resume.svg';
 import '../App.css';
-import { motion } from 'framer-motion';
-import { pageVariants } from '../components/AnimationVariants';
+import { AnimatePresence, motion } from 'framer-motion';
+import { imgVariants, pageVariants } from '../components/AnimationVariants';
 
 const About = () => {
     const [numItem, setNumItem] = useState(0);
@@ -30,15 +28,14 @@ const About = () => {
     ];
     const imgArray = [DepImage0, DepImage1, DepImage2, DepImage3, DepImage4, DepImage5, DepImage6, DepImage7];
     const imgList = imgArray.map((item, index) => (
-        <CSSTransition
-            in={numItem==index}
-            classNames="slide"
-            timeout={1000}
-            unmountOnExit
-            >
-            <DepImgCont url={item} />
-        </CSSTransition>
-    ))
+                index==numItem && <DepImgCont 
+                key={index}
+                variants={imgVariants}
+                initial="hidden"
+                animate="visible"
+                exit="exit"
+                url={item} />))
+
 
     const toggleImg = (x) => {
         setNumItem(x);
@@ -60,7 +57,9 @@ const About = () => {
                 <Wallpaper onClick={() => setNumItem(0)}/>
                 <AboutHeading>Меня зовут Марат Сабитов. Я&nbsp;начинающий Frontend-разработчик.</AboutHeading>
                 {itemList}
-                {imgList}
+                <AnimatePresence>
+                    {imgList}
+                </AnimatePresence>
                 <Resume url={ResImg} />
             </AboutContainer>
         </motion.div>

@@ -1,6 +1,4 @@
-import { motion } from "framer-motion";
 import styled from "styled-components";
-//import { pageVariants } from "./AnimationVariants";
 
 const pageVariants = {
     hidden: {

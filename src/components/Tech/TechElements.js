@@ -1,5 +1,5 @@
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
-import { TransitionGroup } from 'react-transition-group';
 import image from '../../images/frame-3.png';
 
 export const TechContainer = styled.div`
@@ -36,6 +36,7 @@ export const TechHeading = styled.h1`
     justify-content: center;
     align-items: center;
     padding: 0.5rem 1rem;
+    text-align: center;
 
     @media screen and (max-width: 1080px){
         font-size: 1.5rem;
@@ -47,15 +48,15 @@ export const TechHeading = styled.h1`
     }
 
     @media screen and (max-width: 468px){
-        grid-column: 1 / span 10;
+        grid-column: 2 / span 7;
         font-size: 0.8rem;
     }
 `;
 export const TechListCont = styled.div`
     grid-column: 3 / span 6;
-    grid-row: 4 / span 7;
+    grid-row: 4 / span 8;
     display: grid;
-    grid-template-rows: repeat(7, 1fr);
+    grid-template-rows: repeat(8, 1fr);
     grid-template-columns: repeat(2, 1fr);
     grid-column-gap: 20px;
     grid-row-gap: 20px;
@@ -124,9 +125,9 @@ export const BarBottom = styled.div`
 `;
 
 export const BarTop = styled.div`
-    width: 60%;
+    width: 75%;
     height: 5%;
-    border: 2px solid black;
+    border: 3px solid black;
     border-radius: 10px; 
     background-color: white;
     opacity: 0.6;
@@ -141,16 +142,22 @@ export const BarFluid = styled.div`
     transition: height 400ms ease-in-out 100ms;
 `;
 
-export const WowIcon = styled.a`
-    display: ${props => props.active ? "block" : "none"};
+export const CloudCont = styled.div`
     grid-column: 9 / span 2;
     grid-row: 2 / span 2;
     z-index: 10;
     width: 100%;
     height: 100%;
-    background-image: url(${({url}) => url});
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 `;
+
+export const ImgCont = styled(motion.div)`
+    width: 60%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+`;
+

@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import styled, {keyframes} from 'styled-components';
 import image from '../../images/frame-2.png';
 
@@ -12,7 +13,6 @@ export const AboutContainer = styled.div`
     position: relative;
     overflow: hidden;
 `;
-
 
 export const Wallpaper = styled.div`
     background: fixed url(${image}) right top;
@@ -64,7 +64,7 @@ export const ItemIcon = styled.div`
     width: 24px;
     height: 24px;
     margin-right: 20px;
-    z-index: 55;
+    z-index: 75;
 
     @media screen and (max-width: 768px){
         margin-right: 10px;
@@ -90,7 +90,7 @@ export const imgFrames = keyframes`
     }
 `;
 
-export const DepImgCont = styled.div`
+export const DepImgCont = styled(motion.div)`
     grid-column: 7 / span 3;
     grid-row: 5 / span 5;
     z-index: 10;

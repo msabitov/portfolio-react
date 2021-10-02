@@ -1,16 +1,21 @@
 import React, {useState} from 'react';
 import '../App.css';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import {BarBottom, BarFluid, BarTop, ProgressBar, TechContainer, TechHeading, TechItem, TechListCont, TechWallpaper, WowIcon } from '../components/Tech/TechElements';
-import WowSvg from '../images/svg/Wow.svg';
-import { motion } from 'framer-motion';
-import { pageVariants } from '../components/AnimationVariants';
+import {BarBottom, BarFluid, BarTop, CloudCont, ImgCont, ProgressBar, TechContainer, TechHeading, TechItem, TechListCont, TechWallpaper, WowIcon } from '../components/Tech/TechElements';
+import {FaCloud} from 'react-icons/fa';
+import { AnimatePresence, motion } from 'framer-motion';
+import { cloudVariants, pageVariants } from '../components/AnimationVariants';
 
 const Tech = () => {
     const [matrix, setMatrix] = useState([false, false, false, false, false, false, false, 
         false, false, false, false, false, false, false]);
     const BarLevel = matrix.filter(Boolean).length;
 
+    const chooseAll = () => {
+        const matrixNew = new Array(14);
+        if(BarLevel==14) matrixNew.fill(false)
+        else matrixNew.fill(true)
+        setMatrix(matrixNew);
+    }
     const toggle = (index) => {
         const matrixNew = matrix.slice();
         matrixNew.splice(index,1,!(matrixNew[index]));
@@ -31,27 +36,19 @@ const Tech = () => {
         {row:"4 /span 1", column:"2 / span 1", text:"English (Intermediate)"},
         {row:"5 /span 1", column:"2 / span 1", text:"Git"},
         {row:"6 /span 1", column:"2 / span 1", text:"Figma"},
-        {row:"7 /span 1", column:"2 / span 1", text:"MATLAB"}
+        {row:"7 /span 1", column:"2 / span 1", text:"Framer Motion"},
     ];
 
     const TechList = layout.map((item, index) => (
-            <CSSTransition
-            in={matrix[index]}
-            key={index}
-            classNames="tech-item"
-            timeout={200}
-            >
             <TechItem 
                 onClick={() => toggle(index)} 
                 active={matrix[index]} 
                 row={item.row} 
                 column={item.column}
-                transitionName="tech-item"
                 key={"item"+index}
                 >
                 {item.text}
             </TechItem>
-            </CSSTransition>
         ))
     return (
         <motion.div variants={pageVariants} initial="hidden" animate="visible" exit="exit">
@@ -60,8 +57,27 @@ const Tech = () => {
                 <TechHeading>Какие знания Вас интересуют?</TechHeading>
                 <TechListCont>
                     {TechList}
+                    <TechItem 
+                    row="8 /span 1" 
+                    column="1 / span 2"
+                    active={BarLevel == 14}
+                    onClick={() => chooseAll()} 
+                    >
+                        Выбрать все
+                    </TechItem>
                 </TechListCont>
-                <WowIcon url={WowSvg} active={BarLevel == 14} />
+                <CloudCont>
+                    <AnimatePresence exitBeforeEnter>
+                        {(BarLevel == 14) && <ImgCont
+                        variants={cloudVariants}
+                        initial="hidden"
+                        animate="visible"
+                        exit="exit"
+                        >
+                            <FaCloud style={{width: "inherit", height: "inherit"}}/>
+                        </ImgCont>}
+                    </AnimatePresence>
+                </CloudCont>
                 <ProgressBar row={"4 /span 7"} column={"9 / span 2"}>
                     <BarTop />
                     <BarBottom>

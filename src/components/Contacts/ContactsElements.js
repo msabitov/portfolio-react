@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import image from '../../images/frame-4.png';
-import {Route} from 'react-router-dom';
 
 export const ContactsContainer = styled.div`
     padding: 0;
