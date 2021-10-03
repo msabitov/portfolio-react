@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { PageContainer } from '../CommonElements';
 
 export const StartContainer = styled.div`
     height: 100vh;
@@ -28,6 +27,10 @@ export const Heading = styled(Link)`
     &:hover {
         background: rgba(1, 30, 41, 1);
         outline-offset: 0;
+    }
+
+    @media screen and (max-width: 1200px){
+        font-size: 1.3rem;
     }
 
     @media screen and (max-width: 1020px){

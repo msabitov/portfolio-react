@@ -16,7 +16,6 @@ export const ContactsContainer = styled.div`
 export const ContactsWallpaper = styled.div`
     background: fixed url(${image}) left top;
     background-repeat: no-repeat;
-    position: absolute;
     background-size: cover;
     top: 0;
     right: 0;
@@ -25,7 +24,6 @@ export const ContactsWallpaper = styled.div`
 `;
 
 export const ContactsItem = styled.a`
-    font-weight: 500;
     grid-column: ${props => props.column};
     grid-row: ${props => props.row};
     color: black;
@@ -34,8 +32,7 @@ export const ContactsItem = styled.a`
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding: 0.5rem 1rem;
-    position: relative;
+    padding: 0.5rem 1.5rem
     cursor: pointer;
     text-decoration: none;
     border-radius: 30px;
@@ -45,9 +42,18 @@ export const ContactsItem = styled.a`
         box-shadow: 5px 5px 10px grey;
     }
 
-    @media screen and (max-width: 768px){
+    @media screen and (max-width: 1200px){
         font-size: 1rem;
+    }
+
+    @media screen and (max-width: 768px){
         padding: 0 0.5rem;
         grid-column: 2 / span 8;
+    }
+
+    @media screen and (max-width: 440px){
+        font-size: 0.8rem;
+        padding: 0 1rem;
+        grid-column: 1 / span 10;
     }
 `;

@@ -25,18 +25,18 @@ const Tech = () => {
     const layout = [
         {row:"1 /span 1", column:"1 / span 1", text:"HTML5"},
         {row:"2 /span 1", column:"1 / span 1", text:"CSS3"},
-        {row:"3 /span 1", column:"1 / span 1", text:"JavaScript"},
-        {row:"4 /span 1", column:"1 / span 1", text:"Node.js"},
-        {row:"5 /span 1", column:"1 / span 1", text:"React"},
-        {row:"6 /span 1", column:"1 / span 1", text:"Styled Components"},
-        {row:"7 /span 1", column:"1 / span 1", text:"React Router"},
-        {row:"1 /span 1", column:"2 / span 1", text:"Python"},
-        {row:"2 /span 1", column:"2 / span 1", text:"SQL"},
-        {row:"3 /span 1", column:"2 / span 1", text:"Microsoft Office"},
-        {row:"4 /span 1", column:"2 / span 1", text:"English (Intermediate)"},
-        {row:"5 /span 1", column:"2 / span 1", text:"Git"},
-        {row:"6 /span 1", column:"2 / span 1", text:"Figma"},
-        {row:"7 /span 1", column:"2 / span 1", text:"Framer Motion"},
+        {row:"3 /span 1", column:"1 / span 1", text:"Python"},
+        {row:"4 /span 1", column:"1 / span 1", text:"SQL"},
+        {row:"5 /span 1", column:"1 / span 1", text:"Git"},
+        {row:"6 /span 1", column:"1 / span 1", text:"English (Intermediate)"},
+        {row:"7 /span 1", column:"1 / span 1", text:"Microsoft Office"},
+        {row:"1 /span 1", column:"2 / span 1", text:"JavaScript"},
+        {row:"2 /span 1", column:"2 / span 1", text:"Node.js"},
+        {row:"3 /span 1", column:"2 / span 1", text:"React"},
+        {row:"4 /span 1", column:"2 / span 1", text:"React Router"},
+        {row:"5 /span 1", column:"2 / span 1", text:"Styled Components"},
+        {row:"6 /span 1", column:"2 / span 1", text:"Framer Motion"},
+        {row:"7 /span 1", column:"2 / span 1", text:"Figma"},
     ];
 
     const TechList = layout.map((item, index) => (
@@ -54,7 +54,7 @@ const Tech = () => {
         <motion.div variants={pageVariants} initial="hidden" animate="visible" exit="exit">
             <TechContainer key="3">
                 <TechWallpaper />
-                <TechHeading>Какие знания Вас интересуют?</TechHeading>
+                <TechHeading>Какие навыки Вас интересуют?</TechHeading>
                 <TechListCont>
                     {TechList}
                     <TechItem 
@@ -78,10 +78,10 @@ const Tech = () => {
                         </ImgCont>}
                     </AnimatePresence>
                 </CloudCont>
-                <ProgressBar row={"4 /span 7"} column={"9 / span 2"}>
+                <ProgressBar row={"4 /span 8"} column={"9 / span 2"}>
                     <BarTop />
                     <BarBottom>
-                        <BarFluid level={BarLevel*7.15}/>
+                        <BarFluid level={BarLevel*7.15} hue={140 - BarLevel*10} />
                     </BarBottom>
                 </ProgressBar>
             </TechContainer>

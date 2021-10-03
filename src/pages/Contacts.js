@@ -17,7 +17,7 @@ const Contacts = () => {
             <ItemIcon>
                 {item.jsx}
             </ItemIcon>
-            <span style={{marginLeft: "10px"}}>{item.text}</span>
+            {item.text}
         </ContactsItem>
     );
     return (

@@ -46,7 +46,7 @@ export const AboutItem = styled.h2`
     } 
 
     @media screen and (max-width: 1305px){
-        font-size: 0.8rem;
+        font-size: 0.75rem;
     }
     @media screen and (max-width: 950px){
         font-size: 0.7rem;
@@ -68,25 +68,6 @@ export const ItemIcon = styled.div`
 
     @media screen and (max-width: 768px){
         margin-right: 10px;
-    }
-`;
-
-export const imgFrames = keyframes`
-    0% {
-        opacity: 1;
-        transform: rotate(0deg);
-    }
-    25% {
-        opacity: 0;
-        transform: rotate(90deg);
-    }
-    75% {
-        opacity: 0;
-        transform: rotate(270deg);
-    }
-    100% {
-        opacity: 1;
-        transform: rotate(360deg);
     }
 `;
 

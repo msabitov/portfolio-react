@@ -48,12 +48,33 @@ export const NavLogo = styled(NavLink)`
 export const MobileIcon = styled.div`
     display: none;
     @media screen and (max-width: 768px){
-        color: white;   
+        color: white;
         display: block;
         position: absolute;
         top: 0;
         right: 0;
-        transform: translate(-120%, 40%);
+        transform: translate(-120%, 35%);
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+`;
+
+export const MobilePrev = styled(NavLink)`
+    display: none;
+    @media screen and (max-width: 768px){
+        display: inline;
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+`;
+
+export const MobileNext = styled(NavLink)`
+    display: none;
+    @media screen and (max-width: 768px){
+        display: inline;
+        color: white;
+        margin-right: 80%;
         font-size: 1.5rem;
         cursor: pointer;
     }

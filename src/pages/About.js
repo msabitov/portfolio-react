@@ -16,7 +16,6 @@ import { imgVariants, pageVariants } from '../components/AnimationVariants';
 
 const About = () => {
     const [numItem, setNumItem] = useState(0);
-    const [imgState, setImgState] = useState(true);
     const itemInfo = [
         {column:"2 / span 5", row:"5 / span 1", text:"Дата рождения: 3 сентября 1997 г.", jsx: <FaBirthdayCake />}, 
         {column:"2 / span 5", row:"6 / span 1", text:"Семейное положение: Холост", jsx: <FaUserTie />}, 
@@ -34,13 +33,8 @@ const About = () => {
                 initial="hidden"
                 animate="visible"
                 exit="exit"
-                url={item} />))
-
-
-    const toggleImg = (x) => {
-        setNumItem(x);
-        setImgState(false);
-    }
+                url={item} />)
+                );
 
     const itemList = itemInfo.map((item, ind) => (
         <AboutItem onClick={() => numItem!=(ind+1) ? setNumItem(ind+1) : setNumItem(0)} active={numItem == (ind+1)} column={item.column} row={item.row}>

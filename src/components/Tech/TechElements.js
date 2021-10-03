@@ -64,7 +64,7 @@ export const TechListCont = styled.div`
 
     @media screen and (max-width: 768px){
         grid-column: 1 / span 8;
-        grid-row: 4 / span 7;
+        grid-row: 4 / span 8;
         padding-left: 1rem;
     }
 `;
@@ -80,6 +80,7 @@ export const TechItem = styled.h2`
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     padding: 0.5rem 1rem;
     position: relative;
     cursor: default;
@@ -136,10 +137,10 @@ export const BarTop = styled.div`
 export const BarFluid = styled.div`
     position: absolute;
     bottom: 0;
-    background-color: #5FE2DC;
+    background-color: hsl(${props => props.hue}, 60%, 30%);
     width: 100%;
     height: ${props => props.level}%;
-    transition: height 400ms ease-in-out 100ms;
+    transition: all 400ms ease-in-out 100ms;
 `;
 
 export const CloudCont = styled.div`

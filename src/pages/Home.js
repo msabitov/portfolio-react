@@ -1,7 +1,5 @@
 import React from 'react'
 import Video from '../videos/Video.mp4';
-import { PageContainer } from '../components/CommonElements';
-import { Link } from 'react-router-dom';
 import { JobHeading, MainHeading, StartContainer, StartWall, VideoWallpaper, WorkHeading } from '../components/Main/StartSectionElements';
 import { motion } from 'framer-motion';
 import { pageVariants } from '../components/AnimationVariants';

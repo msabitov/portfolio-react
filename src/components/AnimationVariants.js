@@ -29,7 +29,7 @@ export const imgVariants = {
         rotateY: 0,
         rotateZ: 0,
         transition: {
-            delay: 0,
+            delay: 0.5,
             duration: 1,
         }
     },

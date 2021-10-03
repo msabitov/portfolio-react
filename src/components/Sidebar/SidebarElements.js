@@ -28,7 +28,7 @@ export const Icon = styled.div`
         position: absolute;
         top: 0;
         right: 0;
-        transform: translate(-120%, 40%);
+        transform: translate(-120%, 35%);
         font-size: 1.5rem;
         cursor: pointer;
     }

@@ -1,13 +1,16 @@
 import React from 'react'
-import { NoMacthHeading, NoMatchCont } from '../components/NoMatch/NoMatchElements'
+import { NoMatchHeading, NoMatchCont, NoMatchImg, NoMatcComment } from '../components/NoMatch/NoMatchElements'
 import { motion } from 'framer-motion';
 import { pageVariants } from '../components/AnimationVariants';
+import img from '../images/svg/NotFound.svg';
 
 const NoMatch = () => {
     return (
         <motion.div variants={pageVariants} initial="hidden" animate="visible" exit="exit">
             <NoMatchCont key="4">
-                <NoMacthHeading>404 Not found</NoMacthHeading>
+                <NoMatchImg src={img} />
+                <NoMatchHeading>Как Вы здесь оказались?</NoMatchHeading>
+                <NoMatcComment>Не знаю, но задерживаться точно&nbsp;не&nbsp;стоит&nbsp;:)</NoMatcComment>
             </NoMatchCont>
         </motion.div>
     )
