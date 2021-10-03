@@ -47,7 +47,7 @@ const About = () => {
     
     return (
         <motion.div variants={pageVariants} initial="hidden" animate="visible" exit="exit">
-            <AboutContainer key="1" color="blue">
+            <AboutContainer>
                 <Wallpaper onClick={() => setNumItem(0)}/>
                 <AboutHeading>Меня зовут Марат Сабитов. Я&nbsp;начинающий Frontend-разработчик.</AboutHeading>
                 {itemList}

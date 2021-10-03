@@ -17,6 +17,7 @@ export const ContactsWallpaper = styled.div`
     background: fixed url(${image}) left top;
     background-repeat: no-repeat;
     background-size: cover;
+    position: absolute;
     top: 0;
     right: 0;
     width: 100%;
